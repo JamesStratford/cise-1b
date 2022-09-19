@@ -1,0 +1,39 @@
+{
+  "name": "mern_a_to_z",
+  "version": "1.0.0",
+  "description": "cise lab 3 tutorial",
+  "main": "app.js",
+  "scripts": {
+    "build": "cd my-app && npm run build",
+    "install-client": "cd my-app && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon app.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-app\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-app\""
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesStratford/cise-1b.git"
+  },
+  "author": "James Stratford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesStratford/cise-1b/issues"
+  },
+  "homepage": "https://github.com/JamesStratford/cise-1b#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "concurrently": "3.5.1",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.2",
+    "validation": "^0.0.1",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    
+  }
+}
