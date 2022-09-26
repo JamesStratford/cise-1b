@@ -9,7 +9,7 @@ const connectDB = require('./config/db');
 var cors = require('cors');
 
 // routes
-const books = require('./routes/api/books.js');
+const articles = require('./routes/api/articles.js');
 
 const app = express();
 const port = process.env.PORT || 8082;
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(express.json({ extended: false }));
 
 // use Routes
-app.use('/api/books', books);
+app.use('/api/articles', articles);
 
 // Accessing the path module ---- Heroku deployment
 // Step 1:
