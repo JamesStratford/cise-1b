@@ -12,9 +12,9 @@ class App extends Component {
     return (
       <Routes>
           <Route exact path ='/' element={<ShowArticleList />} />
-          <Route path ='/create-book' element={<CreateArticle />} />
-          <Route path='/edit-book/:id' element={<UpdateArticleInfo />} />
-          <Route path='/show-book/:id' element={<ShowArticleDetails />} />
+          <Route path ='/create-article' element={<CreateArticle />} />
+          <Route path='/edit-article/:id' element={<UpdateArticleInfo />} />
+          <Route path='/show-article/:id' element={<ShowArticleDetails />} />
       </Routes>
     );
   }

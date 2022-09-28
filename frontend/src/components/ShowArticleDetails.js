@@ -23,7 +23,7 @@ class ShowArticleDetails extends Component {
         })
       })
       .catch(err => {
-        console.log("Error from ShowBookDetails");
+        console.log("Error from ShowArticleDetails");
       })
   };
 
@@ -65,13 +65,8 @@ class ShowArticleDetails extends Component {
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>ISBN</td>
-            <td>{ article.isbn }</td>
-          </tr>
-          <tr>
-            <th scope="row">4</th>
-            <td>Publisher</td>
-            <td>{ article.publisher }</td>
+            <td>Journal name</td>
+            <td>{ article.journal_name }</td>
           </tr>
           <tr>
             <th scope="row">5</th>
@@ -80,8 +75,23 @@ class ShowArticleDetails extends Component {
           </tr>
           <tr>
             <th scope="row">6</th>
-            <td>Description</td>
-            <td>{ article.description }</td>
+            <td>Volume</td>
+            <td>{ article.volume }</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Number</td>
+            <td>{ article.number }</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Pages</td>
+            <td>{ article.pages }</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>DOI</td>
+            <td>{ article.doi }</td>
           </tr>
         </tbody>
       </table>
@@ -116,8 +126,8 @@ class ShowArticleDetails extends Component {
             </div>
 
             <div className="col-md-6">
-              <Link to={`/edit-book/${article._id}`} className="btn btn-outline-info btn-lg btn-block">
-                    Edit Book
+              <Link to={`/edit-article/${article._id}`} className="btn btn-outline-info btn-lg btn-block">
+                    Edit Article
               </Link>
               <br />
             </div>
