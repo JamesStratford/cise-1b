@@ -4,7 +4,7 @@ import '../App.css';
 import axios from 'axios';
 
 
-class AddArticle extends Component {
+class CreateArticle extends Component {
   constructor() {
     super();
     this.state = {

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-class showBookDetails extends Component {
+class ShowArticleDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      book: {}
+      article: {}
     };
   }
 
@@ -15,11 +15,11 @@ class showBookDetails extends Component {
     // console.log("Print id: " + this.props.match.params.id);
     let id = window.location.href.split('/')[4];
     axios
-      .get('/api/books/'+id)
+      .get('/api/article/'+id)
       .then(res => {
-        console.log("Print-showBookDetails-API-response: " + res.data);
+        console.log("Print-ShowArticleDetails-API-response: " + res.data);
         this.setState({
-          book: res.data
+          article: res.data
         })
       })
       .catch(err => {
@@ -29,20 +29,20 @@ class showBookDetails extends Component {
 
   onDeleteClick (id) {
     axios
-      .delete('/api/books/'+id)
+      .delete('/api/articles/'+id)
       .then(res => {
         this.props.history.push("/");
       })
       .catch(err => {
-        console.log("Error form ShowBookDetails_deleteClick");
+        console.log("Error form ShowArticleDetails_deleteClick");
       })
   };
 
 
   render() {
 
-    const book = this.state.book;
-    let BookItem = <div>
+    const article = this.state.article;
+    let ArticleItem = <div>
       <table className="table table-hover table-dark">
         {/* <thead>
           <tr>
@@ -56,67 +56,67 @@ class showBookDetails extends Component {
           <tr>
             <th scope="row">1</th>
             <td>Title</td>
-            <td>{ book.title }</td>
+            <td>{ article.title }</td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Author</td>
-            <td>{ book.author }</td>
+            <td>{ article.author }</td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>ISBN</td>
-            <td>{ book.isbn }</td>
+            <td>{ article.isbn }</td>
           </tr>
           <tr>
             <th scope="row">4</th>
             <td>Publisher</td>
-            <td>{ book.publisher }</td>
+            <td>{ article.publisher }</td>
           </tr>
           <tr>
             <th scope="row">5</th>
             <td>Published Date</td>
-            <td>{ book.published_date }</td>
+            <td>{ article.published_date }</td>
           </tr>
           <tr>
             <th scope="row">6</th>
             <td>Description</td>
-            <td>{ book.description }</td>
+            <td>{ article.description }</td>
           </tr>
         </tbody>
       </table>
     </div>
 
     return (
-      <div className="ShowBookDetails">
+      <div className="ShowArticleDetails">
         <div className="container">
           <div className="row">
             <div className="col-md-10 m-auto">
               <br /> <br />
               <Link to="/" className="btn btn-outline-warning float-left">
-                  Show Book List
+                  Show Article List
               </Link>
             </div>
             <br />
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Book's Record</h1>
+              <h1 className="display-4 text-center">Article's Record</h1>
               <p className="lead text-center">
-                  View Book's Info
+                  View Article's Info
               </p>
               <hr /> <br />
             </div>
           </div>
           <div>
-            { BookItem }
+            { ArticleItem }
           </div>
 
           <div className="row">
             <div className="col-md-6">
-              <button type="button" className="btn btn-outline-danger btn-lg btn-block" onClick={this.onDeleteClick.bind(this,book._id)}>Delete Book</button><br />
+              <button type="button" className="btn btn-outline-danger btn-lg btn-block" onClick={this.onDeleteClick.bind(this,article._id)}>Delete Book</button><br />
             </div>
 
             <div className="col-md-6">
-              <Link to={`/edit-book/${book._id}`} className="btn btn-outline-info btn-lg btn-block">
+              <Link to={`/edit-book/${article._id}`} className="btn btn-outline-info btn-lg btn-block">
                     Edit Book
               </Link>
               <br />
@@ -133,4 +133,4 @@ class showBookDetails extends Component {
   }
 }
 
-export default showBookDetails;
+export default ShowArticleDetails;

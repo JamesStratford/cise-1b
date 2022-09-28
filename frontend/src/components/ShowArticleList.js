@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { useTable } from 'react-table';
+import '../App.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import BookCard from './BookCard';
 
 class ShowArticleList extends Component {
     constructor(props) {
@@ -64,3 +67,5 @@ class ShowArticleList extends Component {
       );
     }
 }
+
+export default ShowArticleList;

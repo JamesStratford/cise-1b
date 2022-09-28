@@ -7,12 +7,14 @@ class UpdateBookInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      isbn: '',
-      author: '',
-      description: '',
-      published_date: '',
-      publisher: ''
+        title: '',
+        author:'',
+        journal_name:'',
+        published_date:'',
+        volume:'',
+        number:'',
+        pages:'',
+        doi:''
     };
   }
 
@@ -25,7 +27,6 @@ class UpdateBookInfo extends Component {
         // this.setState({...this.state, book: res.data})
         this.setState({
           title: res.data.title,
-          isbn: res.data.isbn,
           author: res.data.author,
           description: res.data.description,
           published_date: res.data.published_date,

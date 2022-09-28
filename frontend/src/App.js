@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+import { Routes,Route } from 'react-router-dom';
+import './App.css';
+
+import CreateArticle from './components/CreateArticle';
+import ShowArticleList from './components/ShowArticleList';
+import ShowArticleDetails from './components/ShowArticleDetails';
+import UpdateArticleInfo from './components/UpdateArticleInfo';
+
+class App extends Component {
+  render() {
+    return (
+      <Routes>
+          <Route exact path ='/' element={<ShowArticleList />} />
+          <Route path ='/create-book' element={<CreateArticle />} />
+          <Route path='/edit-book/:id' element={<UpdateArticleInfo />} />
+          <Route path='/show-book/:id' element={<ShowArticleDetails />} />
+      </Routes>
+    );
+  }
+}
+
+export default App;
