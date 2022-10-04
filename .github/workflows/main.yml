@@ -42,5 +42,5 @@ jobs:
         uses: AkhileshNS/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "ciseassignment1b" #Must be unique in Heroku
-          heroku_email: "kqc4227@autuni.ac.nz"
+          heroku_app_name: "stream50group5cise" #Must be unique in Heroku
+          heroku_email: "james.e.stratford@gmail.com"
