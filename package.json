@@ -4,14 +4,14 @@
   "description": "cise 1b assignment",
   "main": "app.js",
   "scripts": {
-    "test" : "cd frontend && npm run test",
+    "test": "jest && cd frontend && npm run test",
     "build": "cd frontend && npm run build",
     "install-client": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "cd server && nodemon app.js",
     "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JamesStratford/cise-1b.git"
@@ -31,10 +31,15 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.5.2",
-    "validation": "^0.0.1",
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "validation": "^0.0.1"
   },
   "devDependencies": {
-    
+    "jest": "^29.1.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns" : [
+      "<rootDir>/frontend/" 
+    ]
   }
 }

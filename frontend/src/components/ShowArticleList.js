@@ -1,8 +1,57 @@
-import React, { Component } from 'react';
+import React, { Component, useMemo } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
+import { useTable } from 'react-table'
+
+const COLUMNS = [
+  {
+    Header: 'ID',
+  },
+  {
+    Header: 'Title',
+  },
+  {
+    Header: 'Author',
+  },
+  {
+    Header: 'Journal Name',
+  },
+  {
+    Header: 'Published Date',
+  },
+  {
+    Header: 'Volume',
+  },
+  {
+    Header: 'Number',
+  },
+  {
+    Header: 'Pages',
+  },
+  {
+    Header: 'DOI',
+  },
+  {
+    Header: 'Last Updated',
+  }
+]
+
+let ArticleTable = (data) => {
+  const columns = useMemo(() => COLUMNS, []);
+  const data = useMemo(() => data, []);
+
+  const tableInstance = useTable({
+    columns : COLUMNS,
+    data : data
+  })
+  return (
+    <div>
+      
+    </div>
+  )
+};
 
 class ShowArticleList extends Component {
     constructor(props) {
