@@ -15,7 +15,7 @@ class ShowArticleDetails extends Component {
     // console.log("Print id: " + this.props.match.params.id);
     let id = window.location.href.split('/')[4];
     axios
-      .get('/api/article/'+id)
+      .get('/api/articles/'+id)
       .then(res => {
         console.log("Print-ShowArticleDetails-API-response: " + res.data);
         this.setState({
@@ -122,7 +122,7 @@ class ShowArticleDetails extends Component {
 
           <div className="row">
             <div className="col-md-6">
-              <button type="button" className="btn btn-outline-danger btn-lg btn-block" onClick={this.onDeleteClick.bind(this,article._id)}>Delete Book</button><br />
+              <button type="button" className="btn btn-outline-danger btn-lg btn-block" onClick={this.onDeleteClick.bind(this,article._id)}>Delete Article</button><br />
             </div>
 
             <div className="col-md-6">

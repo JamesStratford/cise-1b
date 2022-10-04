@@ -42,7 +42,11 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 
    });
-
+   
+}
+else {
+    const publicPath = path.join(__dirname, '..', 'public');
+    app.use(express.static(publicPath));
 }
 // Step 2:
 // ------------------------------------------------

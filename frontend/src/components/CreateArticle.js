@@ -53,7 +53,7 @@ class CreateArticle extends Component {
         this.props.history.push('/');
       })
       .catch(err => {
-        console.log("Error in CreateBook!");
+        console.log("Error in CreateArticle!");
       })
   };
 
@@ -132,7 +132,7 @@ class CreateArticle extends Component {
 
                 <div className='form-group'>
                   <input
-                    type='text'
+                    type='number'
                     placeholder='Number'
                     name='number'
                     className='form-control'
@@ -143,7 +143,7 @@ class CreateArticle extends Component {
 
                 <div className='form-group'>
                   <input
-                    type='text'
+                    type='number'
                     placeholder='Pages'
                     name='pages'
                     className='form-control'
