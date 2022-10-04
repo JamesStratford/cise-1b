@@ -3,6 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
+import {ArticleTable} from './ArticleTable'
 
 
 class ShowArticleList extends Component {
@@ -61,12 +62,15 @@ class ShowArticleList extends Component {
             </div>
 
             <div className="list">
-                  {articleList}
+              <ArticleTable/>
+            </div>
+            <div>
             </div>
           </div>
         </div>
       );
     }
-}
-
-export default ShowArticleList;
+  }
+  //{articleList}
+  
+  export default ShowArticleList;

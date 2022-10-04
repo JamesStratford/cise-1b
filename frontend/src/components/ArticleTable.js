@@ -1,47 +1,58 @@
 import { useTable } from 'react-table'
 import React, { useMemo } from 'react';
 import './table.css'
+import MOCK_DATA from './dummy_data.json'
 
 const COLUMNS = [
   {
     Header: 'ID',
+    accessor: '_id'
   },
   {
     Header: 'Title',
+    accessor: 'title'
   },
   {
     Header: 'Author',
+    accessor: 'author'
   },
   {
-    Header: 'Journal Name',
+    Header: 'Journal',
+    accessor: 'journal_name'
   },
   {
     Header: 'Published Date',
+    accessor: 'published_date'
   },
   {
     Header: 'Volume',
+    accessor: 'volume'
   },
   {
     Header: 'Number',
+    accessor: 'number'
   },
   {
     Header: 'Pages',
+    accessor: 'pages'
   },
   {
     Header: 'DOI',
+    accessor: 'doi'
   },
   {
     Header: 'Last Updated',
+    accessor: 'updated_date'
   }
 ]
 
-export default function ArticleTable(props) {
+export const ArticleTable = () => {
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => props, []);
+  const data = useMemo(() => MOCK_DATA, []);
 
   const tableInstance = useTable({
     columns,
-    data,
+    data
   })
 
   const {
