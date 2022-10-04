@@ -1,15 +1,15 @@
 {
-  "name": "mern_a_to_z",
+  "name": "cise1bproject",
   "version": "1.0.0",
-  "description": "cise lab 3 tutorial",
+  "description": "cise 1b assignment",
   "main": "app.js",
   "scripts": {
-    "build": "cd my-app && npm run build",
-    "install-client": "cd my-app && npm install",
+    "build": "cd frontend && npm run build",
+    "install-client": "cd frontend && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
-    "server": "nodemon app.js",
-    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-app\"",
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix my-app\""
+    "server": "cd server && nodemon app.js",
+    "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\"",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix frontend\""
 },
   "repository": {
     "type": "git",

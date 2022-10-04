@@ -9,7 +9,7 @@ const connectDB = require('./config/db');
 var cors = require('cors');
 
 // routes
-const books = require('./routes/api/books.js');
+const articles = require('./routes/api/articles.js');
 
 const app = express();
 const port = process.env.PORT || 8082;
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(express.json({ extended: false }));
 
 // use Routes
-app.use('/api/books', books);
+app.use('/api/articles', articles);
 
 // Accessing the path module ---- Heroku deployment
 // Step 1:
@@ -35,14 +35,18 @@ const path = require("path");
 
 if (process.env.NODE_ENV === "production") {
 
-    app.use(express.static("my-app/build"));
+    app.use(express.static("../frontend/build"));
 
     app.get("*", (req, res) => {
 
-    res.sendFile(path.resolve(__dirname, "my-app", "build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
 
    });
-
+   
+}
+else {
+    const publicPath = path.join(__dirname, '..', 'public');
+    app.use(express.static(publicPath));
 }
 // Step 2:
 // ------------------------------------------------

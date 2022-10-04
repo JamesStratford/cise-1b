@@ -4,16 +4,18 @@ import '../App.css';
 import axios from 'axios';
 
 
-class CreateBook extends Component {
+class CreateArticle extends Component {
   constructor() {
     super();
     this.state = {
-      title: '',
-      isbn:'',
-      author:'',
-      description:'',
-      published_date:'',
-      publisher:''
+        title: '',
+        author:'',
+        journal_name:'',
+        published_date:'',
+        volume:'',
+        number:'',
+        pages:'',
+        doi:''
     };
   }
 
@@ -26,53 +28,57 @@ class CreateBook extends Component {
 
     const data = {
       title: this.state.title,
-      isbn: this.state.isbn,
       author: this.state.author,
-      description: this.state.description,
+      journal_name: this.state.journal_name,
       published_date: this.state.published_date,
-      publisher: this.state.publisher
+      volume: this.state.volume,
+      number: this.state.number,
+      pages: this.state.pages,
+      doi: this.state.doi
     };
 
     axios
-      .post('/api/books', data)
+      .post('/api/articles', data)
       .then(res => {
         this.setState({
-          title: '',
-          isbn:'',
-          author:'',
-          description:'',
-          published_date:'',
-          publisher:''
+            title: '',
+            author:'',
+            journal_name:'',
+            published_date:'',
+            volume:'',
+            number:'',
+            pages:'',
+            doi:''
         })
         this.props.history.push('/');
       })
       .catch(err => {
-        console.log("Error in CreateBook!");
+        console.log("Error in CreateArticle!");
       })
   };
 
   render() {
     return (
-      <div className="CreateBook">
+      <div className="CreateArticle">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
               <br />
               <Link to="/" className="btn btn-outline-warning float-left">
-                  Show BooK List
+                  Show Article Table
               </Link>
             </div>
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Add Book</h1>
+              <h1 className="display-4 text-center">Add Article</h1>
               <p className="lead text-center">
-                  Create new book
+                  Create new article entry
               </p>
 
               <form noValidate onSubmit={this.onSubmit}>
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Title of the Book'
+                    placeholder='Title of the Article'
                     name='title'
                     className='form-control'
                     value={this.state.title}
@@ -80,17 +86,6 @@ class CreateBook extends Component {
                   />
                 </div>
                 <br />
-
-                <div className='form-group'>
-                  <input
-                    type='text'
-                    placeholder='ISBN'
-                    name='isbn'
-                    className='form-control'
-                    value={this.state.isbn}
-                    onChange={this.onChange}
-                  />
-                </div>
 
                 <div className='form-group'>
                   <input
@@ -106,10 +101,10 @@ class CreateBook extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Describe this book'
-                    name='description'
+                    placeholder='Journal name'
+                    name='journal_name'
                     className='form-control'
-                    value={this.state.description}
+                    value={this.state.journal_name}
                     onChange={this.onChange}
                   />
                 </div>
@@ -127,10 +122,43 @@ class CreateBook extends Component {
                 <div className='form-group'>
                   <input
                     type='text'
-                    placeholder='Publisher of this Book'
-                    name='publisher'
+                    placeholder='Volume'
+                    name='volume'
                     className='form-control'
-                    value={this.state.publisher}
+                    value={this.state.volume}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className='form-group'>
+                  <input
+                    type='number'
+                    placeholder='Number'
+                    name='number'
+                    className='form-control'
+                    value={this.state.number}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className='form-group'>
+                  <input
+                    type='number'
+                    placeholder='Pages'
+                    name='pages'
+                    className='form-control'
+                    value={this.state.pages}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='doi'
+                    name='doi'
+                    className='form-control'
+                    value={this.state.doi}
                     onChange={this.onChange}
                   />
                 </div>
@@ -148,4 +176,4 @@ class CreateBook extends Component {
   }
 }
 
-export default CreateBook;
+export default CreateArticle;

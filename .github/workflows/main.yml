@@ -24,14 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      
       - name: Set up Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with: 
           node-version: ${{ matrix.node-version }}
         
       - name: Install dependencies
-        run: npm install && cd my-app && npm install
+        run: npm install && cd frontend && npm install
 
       - name: Run the tests
         run: npm test
