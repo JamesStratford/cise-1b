@@ -17,7 +17,7 @@ class ShowArticleList extends Component {
 
   componentDidMount() {
       axios
-          .get('http://localhost:8082/api/articles')
+          .get('./api/articles')
           .then(res => {
           this.setState({
               articles: res.data
