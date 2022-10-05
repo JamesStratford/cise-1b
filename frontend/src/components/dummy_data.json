@@ -1,0 +1,28 @@
+[
+  {
+    "_id": "633bcacf512b1e63d1fc051b",
+    "title": "James",
+    "author": "Test",
+    "journal_name": "1223",
+    "published_date": "2022-10-05T00:00:00.000Z",
+    "volume": "test",
+    "number": 100,
+    "pages": 2,
+    "doi": "fss",
+    "updated_date": "2022-10-04T05:55:27.545Z",
+    "__v": 0
+  },
+  {
+    "_id": "633be463a21a71359fbb640f",
+    "title": "Fake Areticle",
+    "author": "James",
+    "journal_name": "James journal",
+    "published_date": "2022-10-19T00:00:00.000Z",
+    "volume": "11",
+    "number": 22,
+    "pages": 33,
+    "doi": "44",
+    "updated_date": "2022-10-04T07:44:35.945Z",
+    "__v": 0
+  }
+]

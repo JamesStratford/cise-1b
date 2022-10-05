@@ -3,6 +3,8 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ArticleCard from './ArticleCard';
+import {ArticleTable} from './ArticleTable'
+
 
 class ShowArticleList extends Component {
     constructor(props) {
@@ -15,7 +17,7 @@ class ShowArticleList extends Component {
 
   componentDidMount() {
       axios
-          .get('/api/articles')
+          .get('./api/articles')
           .then(res => {
           this.setState({
               articles: res.data
@@ -29,16 +31,7 @@ class ShowArticleList extends Component {
     render() {
       const articles = this.state.articles;
       console.log("PrintArticle: " + articles);
-      let articleList;
-
-      if(!articles) {
-        articleList = "there is no article record!";
-      } else {
-        articleList = articles.map((article, k) =>
-          <ArticleCard article={article} key={k} />
-        );
-      }
-
+      
       return (
         <div className="ShowArticleList">
           <div className="container">
@@ -60,12 +53,15 @@ class ShowArticleList extends Component {
             </div>
 
             <div className="list">
-                  {articleList}
+              <ArticleTable/>
+            </div>
+            <div>
             </div>
           </div>
         </div>
       );
     }
-}
-
-export default ShowArticleList;
+  }
+  //{articleList}
+  
+  export default ShowArticleList;
