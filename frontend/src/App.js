@@ -9,7 +9,7 @@ import UpdateArticleInfo from './components/UpdateArticleInfo';
 
 
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:8082";
+axios.defaults.baseURL = "http://localhost:8082/";
 
 class App extends Component {
   render() {
