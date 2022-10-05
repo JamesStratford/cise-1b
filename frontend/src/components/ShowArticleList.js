@@ -31,16 +31,7 @@ class ShowArticleList extends Component {
     render() {
       const articles = this.state.articles;
       console.log("PrintArticle: " + articles);
-      let articleList;
-
-      if(!articles) {
-        articleList = "there is no article record!";
-      } else {
-        articleList = articles.map((article, k) =>
-          <ArticleCard article={article} key={k} />
-        );
-      }
-
+      
       return (
         <div className="ShowArticleList">
           <div className="container">

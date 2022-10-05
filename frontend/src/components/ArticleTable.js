@@ -1,51 +1,7 @@
-import { useTable } from 'react-table'
-import React, { useMemo } from 'react';
+import React from 'react';
 import './table.css'
-import MOCK_DATA from './dummy_data.json'
-import { Component } from 'react';
 
-const COLUMNS = [
-  {
-    Header: 'ID',
-    accessor: '_id'
-  },
-  {
-    Header: 'Title',
-    accessor: 'title'
-  },
-  {
-    Header: 'Author',
-    accessor: 'author'
-  },
-  {
-    Header: 'Journal',
-    accessor: 'journal_name'
-  },
-  {
-    Header: 'Published Date',
-    accessor: 'published_date'
-  },
-  {
-    Header: 'Volume',
-    accessor: 'volume'
-  },
-  {
-    Header: 'Number',
-    accessor: 'number'
-  },
-  {
-    Header: 'Pages',
-    accessor: 'pages'
-  },
-  {
-    Header: 'DOI',
-    accessor: 'doi'
-  },
-  {
-    Header: 'Last Updated',
-    accessor: 'updated_date'
-  }
-]
+import { Component } from 'react';
 
 export class ArticleTable extends Component {
   constructor(props) {
