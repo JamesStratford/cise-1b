@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import ArticleCard from './ArticleCard';
 import {ArticleTable} from './ArticleTable'
 
 
@@ -31,7 +30,7 @@ class ShowArticleList extends Component {
     render() {
       const articles = this.state.articles;
       console.log("PrintArticle: " + articles);
-      
+
       return (
         <div className="ShowArticleList">
           <div className="container">
