@@ -15,7 +15,8 @@ class CreateArticle extends Component {
         volume:'',
         number:'',
         pages:'',
-        doi:''
+        doi:'',
+        rating:''
     };
   }
 
@@ -34,7 +35,8 @@ class CreateArticle extends Component {
       volume: this.state.volume,
       number: this.state.number,
       pages: this.state.pages,
-      doi: this.state.doi
+      doi: this.state.doi,
+      rating: this.state.rating
     };
 
     axios
@@ -48,7 +50,8 @@ class CreateArticle extends Component {
             volume:'',
             number:'',
             pages:'',
-            doi:''
+            doi:'',
+            rating:''
         })
         this.props.history.push('/');
       })
@@ -159,6 +162,16 @@ class CreateArticle extends Component {
                     name='doi'
                     className='form-control'
                     value={this.state.doi}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <div className='form-group'>
+                  <input
+                    type='text'
+                    placeholder='rating'
+                    name='rating'
+                    className='form-control'
+                    value={this.state.rating}
                     onChange={this.onChange}
                   />
                 </div>

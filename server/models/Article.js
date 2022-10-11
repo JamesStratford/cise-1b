@@ -38,6 +38,10 @@ const ArticleSchema = new mongoose.Schema({
   updated_date: {
     type: Date,
     default: Date.now
+  },
+  rating: {
+    type: Number,
+    requried: true
   }
 });
 

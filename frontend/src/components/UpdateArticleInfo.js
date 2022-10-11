@@ -34,6 +34,7 @@ class UpdateBookInfo extends Component {
           number: res.data.number,
           pages: res.data.pages,
           doi: res.data.dot,
+          rating: res.data.rating,
         });
       })
       .catch((err) => {
@@ -57,6 +58,7 @@ class UpdateBookInfo extends Component {
       number: this.state.number,
       pages: this.state.pages,
       doi: this.state.dot,
+      rating: this.data.rating,
     };
     let id = window.location.href.split("/")[4];
 
@@ -176,7 +178,16 @@ class UpdateBookInfo extends Component {
                   onChange={this.onChange}
                 />
               </div>
-
+              <div className="form-group">
+                <input
+                  type="number"
+                  placeholder="rating"
+                  name="rating"
+                  className="form-control"
+                  value={this.state.rating}
+                  onChange={this.onChange}
+                />
+              </div>
               <button
                 type="submit"
                 className="btn btn-outline-info btn-lg btn-block"

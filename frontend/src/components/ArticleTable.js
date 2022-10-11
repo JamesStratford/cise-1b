@@ -11,7 +11,7 @@ export class ArticleTable extends Component {
     }
 }
 componentDidMount() {
-  fetch("./api/articles")
+  fetch("http://localhost:8082/api/articles")
   .then(res => res.json())
   .then(
       (articles) => {
@@ -34,6 +34,7 @@ componentDidMount() {
                     <th>Number</th>
                     <th>Pages</th>
                     <th>DOI</th>
+                    <th>Rating</th>
                     <th>Last Updated</th>
                 </tr>
             </thead>
@@ -49,6 +50,7 @@ componentDidMount() {
                         <td>{articles.number}</td>
                         <td>{articles.pages}</td>
                         <td>{articles.doi}</td>
+                        <td>{articles.rating}</td>
                         <td>{articles.updated_date}</td>
                     </tr>
                 )}

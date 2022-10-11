@@ -93,6 +93,11 @@ class ShowArticleDetails extends Component {
             <td>DOI</td>
             <td>{ article.doi }</td>
           </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Rating</td>
+            <td>{ article.rating }</td>
+          </tr>
         </tbody>
       </table>
     </div>
