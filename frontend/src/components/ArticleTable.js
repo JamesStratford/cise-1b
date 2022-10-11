@@ -11,7 +11,7 @@ export class ArticleTable extends Component {
     }
 }
 componentDidMount() {
-  fetch("http://localhost:8082/api/articles")
+   fetch("./api/articles")
   .then(res => res.json())
   .then(
       (articles) => {
