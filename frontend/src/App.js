@@ -6,7 +6,7 @@ import CreateArticle from './components/CreateArticle';
 import ShowArticleList from './components/ShowArticleList';
 import ShowArticleDetails from './components/ShowArticleDetails';
 import UpdateArticleInfo from './components/UpdateArticleInfo';
-import SearchBar from "./components/homePage";
+import SearchBar from "./components/Searchbar";
 
 
 import axios from 'axios';
