@@ -9,8 +9,8 @@ import UpdateArticleInfo from './components/UpdateArticleInfo';
 import SearchBar from "./components/homePage";
 
 
-import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:8082";
+//import axios from 'axios';
+//axios.defaults.baseURL = "http://localhost:8082/";
 
 class App extends Component {
   render() {
